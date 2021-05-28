@@ -1,0 +1,15 @@
+| value_1 value_2|
+value_1 := (UIManager default request: 'Enter first value')asInteger.
+value_2:=value_1.
+[ value_2 > 0 ] whileTrue: [ 
+	Transcript show: (value_1 asString), '  '.
+	[value_1~=1] whileTrue:[
+		Transcript show: ('*').
+		value_1 % 2 = 0 
+		ifTrue: [value_1 := value_1/2.]
+		ifFalse: [value_1 := (value_1 * 3) + 1.]
+	].
+	Transcript show: ('*'); cr.
+	value_2:=value_2-1.
+	value_1 :=value_2 .
+].
